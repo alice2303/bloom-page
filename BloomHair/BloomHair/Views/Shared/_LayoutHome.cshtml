@@ -5,22 +5,46 @@
     <meta name="viewport" content="width=device-width" />
     <title>Bloom Hair - Home</title>
     @Styles.Render("~/Content/css")
-
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    
 
 </head>
 <body>
     <div class="o-content-layout">
-            <nav class="o-header__navbar navbar">
+        <nav class="navbar o-header__navbar" role="navigation">
+
                 <div class="container">
                     <div class="navbar-header">
-                        <img src="~/assets/images/header-lipstick.png" />
 
+                        <a class="o-header__menu" data-toggle="collapse" data-target="#navbar" href="javascript:void(0);">
+                            <img class="o-header__navbar-logo hidden-xs" src="~/assets/images/header-lipstick.png" />
+                            <img class="o-header__navbar-logo o-header__navbar-logo--xs visible-xs" src="~/assets/images/menu-circular-button.png" />
+                        </a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="o-header__navbar-ul nav navbar-nav">
+                            <li class="o-header__navbar-li">Inicio</li>
+                            <li class="o-header__navbar-li">Galeria</li>
+                            <li class="o-header__navbar-li">Contacto</li>
+                        </ul>
                     </div>
                 </div>
             </nav>
-
         @RenderBody()
+        <footer class="o-footer">
+            <div class="container">
+                <span>2017 Bloom - Hair & Makeup Artist</span>
+
+            </div>
+        </footer>
     </div>
 </body>
 </html>
+<script type="text/javascript">
+    $(".navbar-toggle").click(function () {
+        $('.navbar-collapse').collapse();
+    });
+   
+</script>
 
